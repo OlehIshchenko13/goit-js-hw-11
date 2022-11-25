@@ -86,12 +86,12 @@ function getRendering(arr) {
 	gallery.insertAdjacentHTML('beforeend', murkap)
 }
 
-function onloadMoreBtnClick() {
+async function onloadMoreBtnClick() {
     
 	images.pageIncrement();
 
-	images.getImages(images.searchQueryInput)
-		.then(gallery => {
+	await images.getImages(images.searchQueryInput)
+		try{gallery => {
 
 			if (!gallery) {
 				throw new Error();
@@ -105,6 +105,6 @@ function onloadMoreBtnClick() {
 			getRendering(gallery.data.hits)
 			lightbox.refresh();
 		}
-		).catch(err => console.log(err));
+        }catch{ console.log(err);}
 
 }
