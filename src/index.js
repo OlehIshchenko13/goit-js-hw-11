@@ -53,7 +53,7 @@ function onScrollEnd() {
 function renderGallery(array, pageNumber) {
 	return array.map(
 	  img =>
-		`<div class="gallery-div">
+		`<div class="photo-card">
 			<a class="gallery-link" href="${img.largeImageURL}"><img src="${img.webformatURL}" class="gallery-image" alt="${img.tags}" loading="lazy" /></a>
 			<div class="info">
 			  <p class="info-item">
